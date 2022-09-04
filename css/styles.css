@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.checked {
+  color: orange;
+}
+
+:root {
+  --ff-primary: "League Spartan", sans-serif;
+
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Light-Grayish-Magenta);
+}
+
+.container {
+  max-width: 375px;
+  background: var(--White);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-image: url("../images/bg-pattern-top-mobile.svg"),
+    url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+}
+.card-top h1 {
+  color: var(--Very-Dark-Magenta);
+  font-weight: 700;
+  font-size: 40px;
+  padding: 1.5rem 1rem;
+}
+
+.card-top p {
+  color: var(--Dark-Grayish-Magenta);
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 2rem;
+  line-height: 1.5rem;
+}
+
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.review {
+  background: var(--Light-Grayish-Magenta);
+  border-radius: var(--radius);
+  padding: 1rem 0;
+}
+
+.review span {
+  padding-bottom: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.review p {
+  color: var(--Very-Dark-Magenta);
+  font-weight: 700;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.single-testimonial {
+  background: var(--Very-Dark-Magenta);
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: var(--White);
+}
+
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.testimonial-img {
+  display: block;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.testimonial-info h2 {
+  font-size: 17px;
+}
+
+.testimonial-info p {
+  color: var(--Soft-Pink);
+}
+
+.single-testimonial p {
+  text-align: start;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    /* background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom; */
+  }
+  .container {
+    background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -20px left -200px, bottom 0px right -200px;
+
+    max-width: 1170px;
+    display: grid;
+    padding: 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "a b"
+      "c c";
+  }
+
+  .card-top {
+    grid-area: a;
+  }
+  .card-middle {
+    padding-top: 1rem;
+    margin-right: 1rem;
+    grid-area: b;
+  }
+
+  .card-top h1 {
+    padding: 0 10rem 1rem 0;
+    text-align: start;
+  }
+
+  .card-top p {
+    padding: 0 5rem 3rem 0;
+    text-align: start;
+  }
+
+  .review {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1rem;
+    width: 90%;
+  }
+
+  .review span {
+    padding-bottom: 0;
+  }
+  .review p {
+    padding-left: 1rem;
+  }
+
+  .review-2 {
+    margin-left: 2rem;
+  }
+
+  .review-3 {
+    margin-left: 4rem;
+  }
+  .testimonial {
+    grid-area: c;
+    display: grid;
+    column-gap: 1.2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .single-testimonial:nth-child(2) {
+    transform: translateY(5%);
+  }
+
+  .single-testimonial:last-child {
+    transform: translateY(10%);
+  }
+}
